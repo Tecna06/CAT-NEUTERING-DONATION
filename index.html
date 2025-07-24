@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help Me Spay My Cat 🐱💔</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f0e6;
+      color: #444;
+      height: 100%;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+    .left {
+      flex: 1;
+      background-image: url('IMG_4991.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .right {
+      flex: 1;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #fff;
+    }
+    .top-text { flex: 0 0 auto; }
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+      color: #222;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .contact-label {
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    button, a.button-link {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex: 1 1 45%;
+    }
+    #showIbanBtn {
+      background-color: #e6f2ff;
+      color: #003366;
+    }
+    #showIbanBtn:hover {
+      background-color: #cce7ff;
+    }
+    .instagram {
+      background-color: #C13584;
+    }
+    .instagram:hover {
+      background-color: #991d63;
+    }
+    .reddit {
+      background-color: #FF4500;
+    }
+    .reddit:hover {
+      background-color: #cc3700;
+    }
+    .email {
+      background-color: #0077cc;
+    }
+    .email:hover {
+      background-color: #005fa3;
+    }
+    .github {
+      background-color: #333;
+    }
+    .github:hover {
+      background-color: #000;
+    }
+    .bottom-section { flex: 0 0 auto; }
+
+    .contact-info {
+      display: none;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .iban-box {
+      background-color: #fff;
+      border: 2px solid #000;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      color: #000;
+    }
+
+    .donation-display {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid #000;
+      background-color: #fff;
+      color: #000;
+      font-size: 1rem;
+      width: fit-content;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+      .left {
+        height: 300px;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left"></div>
+    <div class="right">
+      <div class="top-text">
+        <h1>Help Me Spay My Cat 🐱💔</h1>
+        <p>
+          I found this kitten alone in the streets when she was a newborn baby and brought her home. I raised her.  <br>
+          Now I can't afford her spaying surgery and need your help.<br>
+          If I can't afford her surgery I will have to release her to the streets...😿😭
+        </p>
+      </div>
+
+      <div class="bottom-section">
+        <div class="contact-label">CONTACT ME HOW U WISH</div>
+        <div class="buttons">
+          <button id="showIbanBtn">Show IBAN</button>
+          <a href="https://instagram.com/tecna06" class="button-link instagram" target="_blank">Instagram</a>
+          <a href="https://github.com/Tecna06" class="button-link github" target="_blank">GitHub</a>
+          <a href="https://reddit.com/user/ActuatorBrilliant595" class="button-link reddit" target="_blank">Reddit</a>
+          <button id="showEmailBtn" class="button-link email">Show Email</button>
+        </div>
+
+        <!-- IBAN info -->
+        <div class="contact-info" id="ibanInfo">
+          <div class="iban-box">
+            <strong>💶 EURO IBAN:</strong><br>
+            TR17 0006 4000 0027 3020 5744 57 
+          </div>
+          <div class="iban-box">
+            <strong>💵 DOLLAR IBAN:</strong><br>
+            TR11 0006 4000 0027 3020 6185 06
+          </div>
+          <p style="color:#999;">Thank you so much for your support. Please share this page with kind people 💖</p>
+        </div>
+
+        <!-- Email info -->
+        <div class="contact-info" id="emailInfo">
+          <div class="iban-box">
+            <strong>Email:</strong> gecitmucella@gmail.com
+          </div>
+        </div>
+
+        <!-- Donation display -->
+        <div class="donation-display">💸 Total Donations: 7 EUR / 10 USD</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const showIbanBtn = document.getElementById('showIbanBtn');
+    const ibanInfo = document.getElementById('ibanInfo');
+    const showEmailBtn = document.getElementById('showEmailBtn');
+    const emailInfo = document.getElementById('emailInfo');
+
+    showIbanBtn.addEventListener('click', () => {
+      const isVisible = ibanInfo.style.display === 'block';
+      ibanInfo.style.display = isVisible ? 'none' : 'block';
+      showIbanBtn.textContent = isVisible ? 'Show IBAN' : 'Hide IBAN';
+    });
+
+    showEmailBtn.addEventListener('click', () => {
+      const isVisible = emailInfo.style.display === 'block';
+      emailInfo.style.display = isVisible ? 'none' : 'block';
+      showEmailBtn.textContent = isVisible ? 'Show Email' : 'Hide Email';
+    });
+  </script>
+
+</body>
+</html>
